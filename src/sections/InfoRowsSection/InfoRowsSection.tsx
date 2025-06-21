@@ -15,24 +15,41 @@ type RowType = {
 };
 
 type InfoRowsSectionProps = {
-  title?: string;
+  title?: React.ReactNode;
+  secondaryTitle?: React.ReactNode;
   rows: RowType[];
   revertType?: 'odd' | 'even';
   textAlign?: 'left' | 'center' | 'right';
+  children?: React.ReactNode;
 };
 
 export const InfoRowsSection: React.FC<InfoRowsSectionProps> = ({
   title,
+  secondaryTitle: title2,
   rows,
   revertType = 'odd',
   textAlign = 'left',
+  children,
 }) => (
   <section className="section-container px-25px py-15 md:px-0 md:pt-2.5 md:pb-[35px] lg:px-6">
-    {title && (
-      <h2 className="text-center font-semibold max-w-[80%] mx-auto mb-12.5 text-white text-h4 md:mb-7.5 md:text-h2 lg:mb-[90px] xl:text-display1">
-        {title}
-      </h2>
-    )}
+    <div className="flex flex-col items-center">
+      {title && (
+        <h2 className="font-semibold mt-[80px] text-center text-white text-h4 md:mb-7.5 md:text-h2 xl:text-display1">
+          {title}
+        </h2>
+      )}
+    </div>
+
+    {children}
+
+    <div className="flex flex-col items-center">
+      {title2 && (
+        <h2 className="font-semibold mt-4 text-center text-white text-h4 md:mb-7.5 md:text-h2 xl:text-display1">
+          {title2}
+        </h2>
+      )}
+    </div>
+
     <div className="flex flex-col">
       {rows.map(row => (
         <div

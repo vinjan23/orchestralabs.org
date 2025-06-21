@@ -1,31 +1,48 @@
 import React, { lazy } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 
-import { ROUTES } from '@/config/routes';
+import { ROUTES } from '@/config/';
 import {
+  AboutSymphonyOverview,
   AccountDetails,
+  AdditionaRoles,
   AddSymphonyToWallet,
+  AdvancedIBC,
   Advisors,
   AllBlocks,
   AllTokens,
   AllTransactions,
+  AmbassadorOverview,
+  API_Guide,
+  BasicDetails,
   BlockDetails,
-  CaseStudies,
+  CICD_Guide,
+  CommunityPages,
+  Contributing,
   CreateWallet,
   DeveloperOverview,
   Development,
   DocumentationOverview,
+  ExampleTasks,
   Expansion,
   ExplorerMain,
   Explorers,
+  FoundationDelegation,
   Fundraising,
   Home,
+  IncentivizedTestnet,
   Inception,
+  LevelBenefits,
+  LevelProgression,
+  MemeGuide,
   PasswordRecovery,
+  PrivacyPolicy,
+  QualifyingUsers,
   Roadmap,
   SignIn,
   SignUp,
   SizeOfOpportunity,
+  SoundwaveNFT,
   Stabilization,
   StartupOverview,
   SymphonyImpact,
@@ -33,8 +50,10 @@ import {
   TheSymphonyApproach,
   Tokenomics,
   TransactionDetails,
+  TweetGuide,
   UserOverview,
   Validators,
+  WalletConnect,
   Whitepaper,
   WhyDecentralizedRWAs,
 } from '@/pages';
@@ -59,37 +78,47 @@ export const AppRouter: React.FC = (): React.ReactElement | null =>
           element: <Whitepaper />,
         },
         {
+          path: ROUTES.PRIVACY_POLICY,
+          element: <PrivacyPolicy />,
+        },
+        {
           path: ROUTES.DOCUMENTATION.ROOT,
           element: <DocumentationOverview />,
         },
+        // About Pages
         {
-          path: ROUTES.DOCUMENTATION.WHY_DECENTRALIZED_RWAS,
+          path: ROUTES.DOCUMENTATION.ABOUT.ROOT,
+          element: <AboutSymphonyOverview />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.ABOUT.WHY_DECENTRALIZED_RWAS,
           element: <WhyDecentralizedRWAs />,
         },
         {
-          path: ROUTES.DOCUMENTATION.THE_STABLECOIN_TRILEMMA,
+          path: ROUTES.DOCUMENTATION.ABOUT.THE_STABLECOIN_TRILEMMA,
           element: <TheStablecoinTrilemma />,
         },
         {
-          path: ROUTES.DOCUMENTATION.THE_SYMPHONY_APPROACH,
+          path: ROUTES.DOCUMENTATION.ABOUT.THE_SYMPHONY_APPROACH,
           element: <TheSymphonyApproach />,
         },
         {
-          path: ROUTES.DOCUMENTATION.SYMPHONY_IMPACT,
+          path: ROUTES.DOCUMENTATION.ABOUT.SYMPHONY_IMPACT,
           element: <SymphonyImpact />,
         },
         {
-          path: ROUTES.DOCUMENTATION.SIZE_OF_OPPORTUNITY,
+          path: ROUTES.DOCUMENTATION.ABOUT.SIZE_OF_OPPORTUNITY,
           element: <SizeOfOpportunity />,
         },
         {
-          path: ROUTES.DOCUMENTATION.TOKENOMICS,
+          path: ROUTES.DOCUMENTATION.ABOUT.TOKENOMICS,
           element: <Tokenomics />,
         },
         {
-          path: ROUTES.DOCUMENTATION.ROADMAP,
+          path: ROUTES.DOCUMENTATION.ABOUT.ROADMAP,
           element: <Roadmap />,
         },
+        // User Pages
         {
           path: ROUTES.DOCUMENTATION.USERS.ROOT,
           element: <UserOverview />,
@@ -103,6 +132,60 @@ export const AppRouter: React.FC = (): React.ReactElement | null =>
           element: <AddSymphonyToWallet />,
         },
         {
+          path: ROUTES.DOCUMENTATION.USERS.USING_IBC,
+          element: <AdvancedIBC />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.USERS.INCENTIVIZED_TESTNET,
+          element: <IncentivizedTestnet />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.USERS.QUALIFYING_USERS,
+          element: <QualifyingUsers />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.USERS.SOUNDWAVE_NFT,
+          element: <SoundwaveNFT />,
+        },
+        // Ambassador Pages
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.ROOT,
+          element: <AmbassadorOverview />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.BASIC_DETAILS,
+          element: <BasicDetails />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.EXAMPLE_TASKS,
+          element: <ExampleTasks />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.LEVEL_BENEFITS,
+          element: <LevelBenefits />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.LEVEL_PROGRESSION,
+          element: <LevelProgression />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.ADDITIONAL_ROLES,
+          element: <AdditionaRoles />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.TWEET_GUIDE,
+          element: <TweetGuide />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.MEME_GUIDE,
+          element: <MemeGuide />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.AMBASSADORS.COMMUNITY_PAGES,
+          element: <CommunityPages />,
+        },
+        // Developer Pages
+        {
           path: ROUTES.DOCUMENTATION.DEVELOPERS.ROOT,
           element: <DeveloperOverview />,
         },
@@ -114,6 +197,27 @@ export const AppRouter: React.FC = (): React.ReactElement | null =>
           path: ROUTES.DOCUMENTATION.DEVELOPERS.VALIDATORS,
           element: <Validators />,
         },
+        {
+          path: ROUTES.DOCUMENTATION.DEVELOPERS.FOUNDATION_DELEGATION,
+          element: <FoundationDelegation />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.DEVELOPERS.CONTRIBUTING,
+          element: <Contributing />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.DEVELOPERS.API_GUIDE,
+          element: <API_Guide />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.DEVELOPERS.CICD_GUIDE,
+          element: <CICD_Guide />,
+        },
+        {
+          path: ROUTES.DOCUMENTATION.DEVELOPERS.WALLETCONNECT,
+          element: <WalletConnect />,
+        },
+        // Startup Pages
         {
           path: ROUTES.DOCUMENTATION.STARTUPS.ROOT,
           element: <StartupOverview />,
@@ -141,10 +245,6 @@ export const AppRouter: React.FC = (): React.ReactElement | null =>
         {
           path: ROUTES.DOCUMENTATION.STARTUPS.FUNDRAISING,
           element: <Fundraising />,
-        },
-        {
-          path: ROUTES.DOCUMENTATION.STARTUPS.CASE_STUDIES,
-          element: <CaseStudies />,
         },
       ],
     },

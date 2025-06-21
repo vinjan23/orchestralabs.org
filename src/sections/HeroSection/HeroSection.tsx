@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/helpers';
 
 import waves2 from '@/assets/images/waves-test.svg';
+import { SOCIAL_LINKS } from '@/constants';
 
 export const HeroSection = () => (
   <div className="min-h-screen relative">
@@ -10,14 +11,15 @@ export const HeroSection = () => (
     <div className="flex justify-center items-center min-h-[inherit] relative z-[1] px-25px md:px-6">
       <div className="flex flex-col max-w-[882px] text-center items-center gap-4 mt-[-50%] md:-mt-40 xl:-mt-[120px]">
         <h1 className="font-semibold text-white text-h4 md:text-h2/[56px] xl:text-display2">
-          Discover truly decentralized real-world assets
+          <span className="tracking-wide-30">SYMPHONY</span>
+          <p className="text-blue text-h5">The Stablecoin Chain</p>
         </h1>
-        <p className="text-grey text-body-md md:text-body-lg xl:text-body-xl">
+        <p className="text-grey text-body-md md:text-body-lg xl:text-body-xl mt-5">
           {/* Releasing soon via IDO */}
-          Testnet now live!
+          Earn yield on anything!
         </p>
         <Link
-          to="https://medium.com/@orchestra_labs/how-to-join-the-symphony-incentivized-testnet-and-earn-airdrops-7ecd07084665"
+          to={SOCIAL_LINKS[1].href}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -26,7 +28,7 @@ export const HeroSection = () => (
             'hover:bg-background-dark-grey-hover',
           )}
         >
-          Get Started
+          Join our Testnet!
         </Link>
       </div>
     </div>

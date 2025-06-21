@@ -44,7 +44,7 @@ export const BlogArticlesSlider = () => {
   }, []);
 
   return (
-    <section className="bg-background-dark-grey py-15 px-25px md:py-17.5 md:px-6 xl:py-22.5">
+    <section className="bg-background-black py-15 px-25px md:py-17.5 md:px-6 xl:py-22.5">
       <div className="section-container md:px-19 xl:px-[125px]">
         <Splide
           aria-label="Last posts slider"
@@ -67,11 +67,11 @@ export const BlogArticlesSlider = () => {
             },
           }}
         >
-          <div className="flex justify-between items-end mb-[35px] md:mb-12.5 xl:mb-22.5">
+          <div className="flex justify-between items-center mb-[35px] md:mb-12.5 xl:mb-22.5 relative">
             <h2 className="text-white font-semibold text-h4 md:text-h2 xl:text-display2">
               Last posts
             </h2>
-            <div className="splide__arrows flex gap-[14px]">
+            <div className="splide__arrows flex gap-[14px] absolute right-0 bottom-[-20px]">
               <button
                 aria-label="Previous slide"
                 type="button"
